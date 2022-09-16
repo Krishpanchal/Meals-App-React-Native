@@ -1,7 +1,7 @@
 import React, { useLayoutEffect } from "react";
 import { FlatList, StyleSheet, Text, View } from "react-native";
-import MealItem from "./components/MealItem";
-import { CATEGORIES, MEALS } from "./data/dummy-data";
+import MealItem from "../components/MealItem";
+import { CATEGORIES, MEALS } from "../data/dummy-data";
 
 const MealsOverviewScreen = ({ route, navigation }) => {
   const catId = route.params.categoryId;
@@ -33,6 +33,7 @@ const MealsOverviewScreen = ({ route, navigation }) => {
       duration: item.duration,
       complexity: item.complexity.toUpperCase(),
       affordability: item.affordability.toUpperCase(),
+      id: item.id,
     };
 
     return <MealItem {...mealProps} />;
